@@ -1,0 +1,15 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>[%X{transactionId}] %black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1}): %msg%n%throwable
+            </pattern>
+        </layout>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+    <logger name="io.netty" level="INFO"/>
+    <logger name="Exposed" level="TRACE"/>
+    <logger name="com.zaxxer.hikari" level="TRACE"/>
+    <logger name="com.zaxxer.hikari.HikariDataSource" level="TRACE"/>
+</configuration>
